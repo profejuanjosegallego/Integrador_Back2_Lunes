@@ -12,9 +12,9 @@ public class Familiar {
     @Column(name = "parentesco", nullable = false ,unique = false)
     @Enumerated(EnumType.STRING)
     private Parentescos parentesco;
-    @Column(name = "telefono", nullable = false, unique = false)
+    @Column(name = "telefono", nullable = false, unique = false, length = 10)
     private String telefono;
-    @Column(name = "direccion", nullable = false, unique = false)
+    @Column(name = "direccion", nullable = false, unique = false, length = 150)
     private String direccion;
 
     public Familiar(){
