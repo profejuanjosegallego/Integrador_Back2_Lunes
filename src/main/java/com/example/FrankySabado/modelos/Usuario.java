@@ -28,9 +28,9 @@ public class Usuario {
 
     //RELACIONANDOME CON 1 ESTUDIANTE
 
-    public Usuario() {
+    
 
-    }
+    public Usuario() {}
 
     public Usuario(Integer id, String nombre, String correo, String contraseña, Roles rol, Estados estado) {
         this.id = id;
