@@ -14,15 +14,21 @@ public class Matricula {
     private int matricula_id;
     @Column(name = "semestre", nullable = false)
     private int semestre;
+    @Column (name="id_grupo",nullable = false)
+    private String grupo_id;
+    @Column (name="periodo",nullable = false)
+    private int periodo;
 
     public Matricula() {
     }
 
-    public Matricula(Integer id, String nombre, int matricula_id, int semestre) {
+    public Matricula(Integer id, String nombre, int matricula_id, int semestre, String grupo_id, int periodo) {
         this.id = id;
         this.nombre = nombre;
         this.matricula_id = matricula_id;
         this.semestre = semestre;
+        this.grupo_id = grupo_id;
+        this.periodo = periodo;
     }
 
     public Integer getId() {
@@ -55,5 +61,21 @@ public class Matricula {
 
     public void setSemestre(int semestre) {
         this.semestre = semestre;
+    }
+
+    public String getGrupo_id() {
+        return grupo_id;
+    }
+
+    public void setGrupo_id(String grupo_id) {
+        this.grupo_id = grupo_id;
+    }
+
+    public int getPeriodo() {
+        return periodo;
+    }
+
+    public void setPeriodo(int periodo) {
+        this.periodo = periodo;
     }
 }
