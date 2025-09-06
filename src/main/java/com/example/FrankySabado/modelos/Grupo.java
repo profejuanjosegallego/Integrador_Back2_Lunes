@@ -1,15 +1,25 @@
 package com.example.FrankySabado.modelos;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import jakarta.persistence.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table (name= "grupo")
 public class Grupo {
-    @id
-    @GeneratedValue(strategy = GeneratedType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @Column(name="nombre", nullable = false, unique = false)
     private String nombre;
-    @Column(nombre= "semestre", nullable = false, unique = false)
+    @Column(name= "semestre", nullable = false, unique = false)
     private String semestre;
+
+    //Relacion uno a muchos con materia
+    @OneToMany (mappedBy = "grupo", cascade = CascadeType.ALL)
+    @JsonManagedReference
+    private List<Materia> materias = new ArrayList<>();
 
 
 
@@ -44,5 +54,13 @@ public class Grupo {
 
     public void setSemestre(String semestre) {
         this.semestre = semestre;
+    }
+
+    public List<Materia> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
     }
 }
