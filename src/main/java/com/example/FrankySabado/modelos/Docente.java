@@ -10,29 +10,30 @@ public class Docente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "nombre", length = 50, nullable = false, unique = false)
-    private String nombre;
-    @Column(name = "correo", length = 50, nullable = false, unique = false)
-    private String  correo;
-    @Column(name = "contraseña", length = 50, nullable = false, unique = false)
-    private String contraseña;
-    @Column(name = "rol", length = 50, nullable = false, unique = false)
-    @Enumerated(EnumType.STRING)
-    private Roles rol;
-    @Column(name = "estado", length = 50, nullable = false, unique = false)
-    @Enumerated(EnumType.STRING)
-    private Estados estados;
+
+    @Column(name = "especialidad", length = 100, nullable = false)
+    private String especialidad;
+
+    @Column(name = "nivelAcademico", length = 100, nullable = false)
+    private String nivelAcademico;
+
+    @Column(name = "departamento", length = 100, nullable = false)
+    private  String departamento;
+
+    //Relación con entidad Usuario
+    @OneToOne(mappedBy = "usuario")
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false, unique = true)
+    private Usuario usuario;
 
     public Docente() {
     }
 
-    public Docente(Integer id, String nombre, String correo, String contraseña, Roles rol, Estados estados) {
+    public Docente(Integer id, String especialidad, String nivelAcademico, String departamento, Usuario usuario) {
         this.id = id;
-        this.nombre = nombre;
-        this.correo = correo;
-        this.contraseña = contraseña;
-        this.rol = rol;
-        this.estados = estados;
+        this.especialidad = especialidad;
+        this.nivelAcademico = nivelAcademico;
+        this.departamento = departamento;
+        this.usuario = usuario;
     }
 
     public Integer getId() {
@@ -43,44 +44,36 @@ public class Docente {
         this.id = id;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getEspecialidad() {
+        return especialidad;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 
-    public String getCorreo() {
-        return correo;
+    public String getNivelAcademico() {
+        return nivelAcademico;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setNivelAcademico(String nivelAcademico) {
+        this.nivelAcademico = nivelAcademico;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getDepartamento() {
+        return departamento;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
     }
 
-    public Roles getRol() {
-        return rol;
+    public Usuario getUsuario(){
+        return usuario;
     }
 
-    public void setRol(Roles rol) {
-        this.rol = rol;
-    }
-
-    public Estados getEstados() {
-        return estados;
-    }
-
-    public void setEstados(Estados estados) {
-        this.estados = estados;
+    public void setUsuario(Usuario usuario){
+        this.usuario = usuario;
     }
 }
 
