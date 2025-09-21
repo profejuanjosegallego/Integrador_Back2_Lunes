@@ -20,14 +20,20 @@ public class Docente {
     @Column(name = "departamento", length = 100, nullable = false)
     private  String departamento;
 
+    //Relación con entidad Usuario
+    @OneToOne(mappedBy = "usuario")
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id", nullable = false, unique = true)
+    private Usuario usuario;
+
     public Docente() {
     }
 
-    public Docente(Integer id, String especialidad, String nivelAcademico, String departamento) {
+    public Docente(Integer id, String especialidad, String nivelAcademico, String departamento, Usuario usuario) {
         this.id = id;
         this.especialidad = especialidad;
         this.nivelAcademico = nivelAcademico;
         this.departamento = departamento;
+        this.usuario = usuario;
     }
 
     public Integer getId() {
@@ -60,6 +66,14 @@ public class Docente {
 
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
+    }
+
+    public Usuario getUsuario(){
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario){
+        this.usuario = usuario;
     }
 }
 
