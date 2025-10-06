@@ -40,5 +40,3 @@ public class UsuarioGenericoDTO {
         this.rol = rol;
     }
 }
-
-

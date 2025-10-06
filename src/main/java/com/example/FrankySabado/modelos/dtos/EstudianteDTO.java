@@ -1,19 +1,22 @@
 package com.example.FrankySabado.modelos.dtos;
 
+import com.example.FrankySabado.ayudas.Roles;
+
 import java.time.LocalDate;
 
 public class EstudianteDTO {
+
     private String nombre;
-    private String correo;
+    private Roles rol;
     private Double promedio;
     private LocalDate fechaNacimiento;
 
     public EstudianteDTO() {
     }
 
-    public EstudianteDTO(String nombre, String correo, Double promedio, LocalDate fechaNacimiento) {
+    public EstudianteDTO(String nombre, Roles rol, Double promedio, LocalDate fechaNacimiento) {
         this.nombre = nombre;
-        this.correo = correo;
+        this.rol = rol;
         this.promedio = promedio;
         this.fechaNacimiento = fechaNacimiento;
     }
@@ -26,12 +29,12 @@ public class EstudianteDTO {
         this.nombre = nombre;
     }
 
-    public String getCorreo() {
-        return correo;
+    public Roles getRol() {
+        return rol;
     }
 
-    public void setCorreo(String correo) {
-        this.correo = correo;
+    public void setRol(Roles rol) {
+        this.rol = rol;
     }
 
     public Double getPromedio() {
