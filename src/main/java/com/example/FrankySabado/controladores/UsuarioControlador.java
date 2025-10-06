@@ -11,64 +11,64 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/usuarios")
 public class UsuarioControlador {
 
-    private final UsuarioServicio servicio;
-
     @Autowired
-    public UsuarioControlador(UsuarioServicio servicio) {
-        this.servicio = servicio;
-    }
+    private UsuarioServicio servicio;
 
-    // Crear/guardar usuario
+    //Por cada metodo del servicio se programa
+    //un metodo del controlador
     @PostMapping
-    public ResponseEntity<?> guardar(@RequestBody Usuario usuario) {
-        try {
+    public ResponseEntity<?> activarServicioGuardar(@RequestBody Usuario datosQueEnviaJossy){
+        try{
             return ResponseEntity
-                    .status(HttpStatus.CREATED)
-                    .body(servicio.guardarUsuario(usuario));
-        } catch (Exception error) {
+                    .status(HttpStatus.OK)
+                    .body(this.servicio.guardarUsuario(datosQueEnviaJossy));
+        }catch(Exception error){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(error.getMessage());
         }
     }
 
-    // Listar todos
     @GetMapping
-    public ResponseEntity<?> buscarTodos() {
-        try {
+    public ResponseEntity<?> activarServicioBuscarTodos(){
+        try{
             return ResponseEntity
-                    .ok(servicio.buscarUsuarios());
-        } catch (Exception error) {
+                    .status(HttpStatus.OK)
+                    .body(this.servicio.buscarUsuarios());
+        }catch(Exception error){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(error.getMessage());
         }
     }
 
-    // Buscar por id
+
+
     @GetMapping("/{id}")
-    public ResponseEntity<?> buscarPorId(@PathVariable Long id) {
-        try {
+    public ResponseEntity<?> activarServicioBuscarUsuarioID(@PathVariable Integer id){
+        try{
             return ResponseEntity
-                    .ok(servicio.buscarUsuarioPorId(id));
-        } catch (Exception error) {
+                    .status(HttpStatus.OK)
+                    .body(this.servicio.buscarUsuarioPorId(id));
+        }catch(Exception error){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(error.getMessage());
         }
     }
 
-    // Buscar por correo (GET con query param: /usuarios/correo?correo=alguien@dominio.com)
     @GetMapping("/correo")
-    public ResponseEntity<?> buscarPorCorreo(@RequestParam String correo) {
-        try {
+    public ResponseEntity<?>activarServicioBuscarCorreo(@RequestBody Usuario datosQueMandaJossy){
+        try{
             return ResponseEntity
-                    .ok(servicio.buscarUsuarioPorCorreo(correo));
-        } catch (Exception error) {
+                    .status(HttpStatus.OK)
+                    .body(this.servicio.buscarUsuarioPorCorreo(datosQueMandaJossy.getCorreo()));
+        }catch(Exception error){
             return ResponseEntity
                     .status(HttpStatus.BAD_REQUEST)
                     .body(error.getMessage());
         }
-    }
-}
 
+    }
+
+}
