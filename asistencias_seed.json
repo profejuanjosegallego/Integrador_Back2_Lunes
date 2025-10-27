@@ -1,0 +1,107 @@
+[
+  {
+    "fecha": "2025-10-20",
+    "grupoId": 101,
+    "estudianteId": 551,
+    "observacion": "Llegó puntual",
+    "estado": "PRESENTE"
+  },
+  {
+    "fecha": "2025-10-20",
+    "grupoId": 101,
+    "estudianteId": 552,
+    "observacion": "Ausente sin aviso",
+    "estado": "AUSENTE"
+  },
+  {
+    "fecha": "2025-10-20",
+    "grupoId": 102,
+    "estudianteId": 553,
+    "observacion": "Llegó tarde por tráfico",
+    "estado": "TARDE"
+  },
+  {
+    "fecha": "2025-10-21",
+    "grupoId": 102,
+    "estudianteId": 554,
+    "observacion": "Certificado médico",
+    "estado": "JUSTIFICADA"
+  },
+  {
+    "fecha": "2025-10-21",
+    "grupoId": 103,
+    "estudianteId": 555,
+    "observacion": "Asistencia normal",
+    "estado": "PRESENTE"
+  },
+  {
+    "fecha": "2025-10-21",
+    "grupoId": 103,
+    "estudianteId": 556,
+    "observacion": "No se presentó",
+    "estado": "AUSENTE"
+  },
+  {
+    "fecha": "2025-10-22",
+    "grupoId": 101,
+    "estudianteId": 557,
+    "observacion": "Retraso leve",
+    "estado": "TARDE"
+  },
+  {
+    "fecha": "2025-10-22",
+    "grupoId": 101,
+    "estudianteId": 558,
+    "observacion": "Permiso académico",
+    "estado": "JUSTIFICADA"
+  },
+  {
+    "fecha": "2025-10-22",
+    "grupoId": 102,
+    "estudianteId": 559,
+    "observacion": "Asistencia verificada",
+    "estado": "PRESENTE"
+  },
+  {
+    "fecha": "2025-10-23",
+    "grupoId": 102,
+    "estudianteId": 560,
+    "observacion": "Sin comunicación",
+    "estado": "AUSENTE"
+  },
+  {
+    "fecha": "2025-10-23",
+    "grupoId": 103,
+    "estudianteId": 561,
+    "observacion": "Llegó tarde por lluvia",
+    "estado": "TARDE"
+  },
+  {
+    "fecha": "2025-10-23",
+    "grupoId": 103,
+    "estudianteId": 562,
+    "observacion": "Excusa por cita médica",
+    "estado": "JUSTIFICADA"
+  },
+  {
+    "fecha": "2025-10-24",
+    "grupoId": 101,
+    "estudianteId": 563,
+    "observacion": "Participación activa",
+    "estado": "PRESENTE"
+  },
+  {
+    "fecha": "2025-10-24",
+    "grupoId": 102,
+    "estudianteId": 564,
+    "observacion": "No asistió",
+    "estado": "AUSENTE"
+  },
+  {
+    "fecha": "2025-10-26",
+    "grupoId": 103,
+    "estudianteId": 565,
+    "observacion": "Tarde justificada por transporte",
+    "estado": "JUSTIFICADA"
+  }
+]
